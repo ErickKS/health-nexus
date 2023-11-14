@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.container {
+  width: min(1248px, 100%);
+  padding-inline: 16px;
+  margin-inline: auto;
+}
+
+h1 {
+  font-family: var(--font-sulphur);
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 1;
+}
