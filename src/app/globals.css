@@ -14,3 +14,10 @@ h1 {
   font-size: 64px;
   line-height: 1;
 }
+
+h2 {
+  font-family: var(--font-sulphur);
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1;
+}
