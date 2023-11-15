@@ -4,7 +4,7 @@ import { Partnership } from "@/components/home/partnership";
 
 export default function Home() {
   return (
-    <main className="flex flex-col min-h-screen">
+    <main className="flex flex-col min-h-screen bg-[#CBD3DE]">
       <header className="">
         <Nav />
         <Banner />

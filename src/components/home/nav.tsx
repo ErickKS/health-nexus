@@ -8,11 +8,11 @@ export function Nav() {
   const router = useRouter();
 
   function SignIn() {
-    router.push("/login");
+    router.push("/autenticacao/login");
   }
 
   function SignUp() {
-    router.push("/registro");
+    router.push("/autenticacao/registro");
   }
 
   return (
