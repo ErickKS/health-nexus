@@ -24,14 +24,14 @@ export default function Plataforma() {
   }
 
   return (
-    <>
-      <div className="flex justify-between items-center px-6 bg-[#ECF2FF] rounded-xl">
+    <div className="grid grid-rows-[200px_1fr] gap-8 h-full">
+      <div className="flex justify-between items-center h-[200px] px-6 bg-[#ECF2FF] rounded-xl">
         <div className="space-y-1">
           <h3>{greeting} Erick</h3>
           <h1>Bem-vindo</h1>
         </div>
 
-        <Image src={"/img/plataforma/3d.png"} alt="" height={144} width={164.44} priority />
+        <Image src={"/img/plataforma/3d-home.png"} alt="" height={144} width={164.44} priority />
       </div>
 
       <div className="grid grid-cols-[1fr_208px] gap-8">
@@ -41,6 +41,6 @@ export default function Plataforma() {
           <div className="rounded-xl shadow-main"></div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

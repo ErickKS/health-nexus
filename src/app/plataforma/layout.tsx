@@ -7,8 +7,8 @@ export default function PlataformaLayout({ children }: { children: React.ReactNo
       <Aside />
 
       <main className="flex flex-col gap-8 max-w-[1152px] w-full py-4 mx-auto">
-        <div className="flex justify-between items-center h-14 px-6 rounded-xl shadow-main">
-          <span>Home</span>
+        <div className="flex justify-between items-center py-3 px-6 rounded-xl shadow-main">
+          <span>Plataforma</span>
 
           <div className="flex gap-4">
             <button className="flex justify-center items-center h-8 w-8 rounded-lg border border-[#E5EAEF]">
@@ -22,7 +22,7 @@ export default function PlataformaLayout({ children }: { children: React.ReactNo
           </div>
         </div>
 
-        <div className="grid grid-rows-[200px_1fr] gap-8 h-full">{children}</div>
+        <>{children}</>
       </main>
     </div>
   );
