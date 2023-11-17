@@ -14,7 +14,7 @@ export default function Comunidade() {
         <Image src={"/img/plataforma/3d-assistente.png"} alt="" height={132} width={132} priority />
       </div>
 
-      <div className="grid grid-cols-[1fr_240px] gap-8">
+      <div className="grid grid-cols-[1fr_240px] gap-6">
         <div className="flex items-center gap-6 px-6 rounded-xl shadow-main">
           <input type="text" id="message" name="message" className="w-full outline-none" placeholder="Pesquisar" autoComplete="off" />
 
@@ -23,7 +23,7 @@ export default function Comunidade() {
           </button>
         </div>
 
-        <button className="h-14 bg-[#123359] rounded-xl text-white font-medium mt-1">Fazer uma pegunta</button>
+        <button className="h-14 bg-[#123359] rounded-xl text-white font-medium">Fazer uma pegunta</button>
       </div>
 
       <div className="grid grid-cols-3 gap-4 h-fit">

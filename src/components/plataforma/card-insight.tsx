@@ -8,7 +8,7 @@ interface CardInsightProps {
 
 export function CardInsight({ title, author, image }: CardInsightProps) {
   return (
-    <button className="relative flex flex-col justify-end p-6 h-[280px] rounded-xl text-white">
+    <button className="relative flex flex-col justify-end p-6 h-[280px] rounded-xl text-white transition-all hover:scale-[1.01]">
       <div className="absolute z-10 inset-0 bg-black/50 rounded-xl" />
       <Image src={image} alt="imagem de destaque do post" fill priority className="absolute inset-0 w-full object-cover rounded-xl" />
 
