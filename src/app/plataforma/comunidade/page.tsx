@@ -1,3 +1,4 @@
+import { CardQuestion } from "@/components/plataforma/card-question";
 import { Search } from "lucide-react";
 import Image from "next/image";
 
@@ -22,12 +23,16 @@ export default function Comunidade() {
           </button>
         </div>
 
-        <button type="submit" className="h-14 bg-[#123359] rounded-lg text-white font-medium mt-1">
-          Fazer uma pegunta
-        </button>
+        <button className="h-14 bg-[#123359] rounded-xl text-white font-medium mt-1">Fazer uma pegunta</button>
       </div>
 
-      <div className="flex rounded-lg shadow-main"></div>
+      <div className="grid grid-cols-3 gap-4 h-fit">
+        <CardQuestion date="16 de novembro" question="Tem algum chá caseiro que alivia a dor de cabeça?" comments={0} />
+        <CardQuestion date="16 de novembro" question="Tem algum chá caseiro que alivia a dor de cabeça?" comments={2} />
+        <CardQuestion date="16 de novembro" question="Tem algum chá caseiro que alivia a dor de cabeça?" comments={3} />
+        <CardQuestion date="16 de novembro" question="Tem algum chá caseiro que alivia a dor de cabeça?" comments={4} />
+        <CardQuestion date="16 de novembro" question="Tem algum chá caseiro que alivia a dor de cabeça?" comments={2} />
+      </div>
     </div>
   );
 }
