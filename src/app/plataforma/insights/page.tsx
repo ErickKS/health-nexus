@@ -14,12 +14,10 @@ export default function Insights() {
         <Image src={"/img/plataforma/3d-insights.png"} alt="" height={146} width={146} priority />
       </div>
 
-      <div className="grid grid-cols-3 gap-8">
-        <CardInsight />
-        <CardInsight />
-        <CardInsight />
-        <CardInsight />
-        <CardInsight />
+      <div className="grid grid-cols-3 gap-8 [&>*:nth-child(10n+1)]:col-span-2 [&>*:nth-child(10n+7)]:col-span-2">
+        <CardInsight title="Saiba como viver  até os 96 anos" author="Dr. Elizabeth II" image="/img/plataforma/insight-1.jpg" />
+        <CardInsight title="Como aliviar o estresse" author="Dr. Jack Sparrow" image="/img/plataforma/insight-2.jpg" />
+        <CardInsight title="O poder do sono reparador" author="Dra. Marcela Dorminhoca" image="/img/plataforma/insight-3.jpg" />
       </div>
     </>
   );
