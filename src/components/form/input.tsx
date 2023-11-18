@@ -20,11 +20,11 @@ export function Input({ type: Type, id, iconStart: IconStart, alert, ...props }:
     <label
       htmlFor={id}
       className={clsx(
-        "flex items-center gap-4 h-12 w-full px-4 border-2 rounded-lg select-none transition-all",
+        "flex items-center gap-4 h-12 w-full px-4 border rounded-lg select-none shadow-main transition-all",
         "text-[#2E2E2E]",
-        "focus-within:bg-[#F1F1F1]",
+        "focus-within:border-[#123359]",
         { "border-red-600": alert },
-        { "border-[#2E2E2E]": !alert }
+        { "border-[#E5EAEF]": !alert }
       )}
     >
       {IconStart && <IconStart size={24} />}
