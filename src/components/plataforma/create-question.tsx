@@ -1,18 +1,23 @@
 "use client";
 
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 
 import { Dialog } from "../radix/dialog";
 
-export function CreateQuestion() {
+interface CreateQuestionProps {
+  triggerStyle: string;
+  children: ReactNode;
+}
+
+export function CreateQuestion({ triggerStyle, children }: CreateQuestionProps) {
   const [openDialog, setOpenDialog] = useState(false);
 
   function createQuestion() {}
 
   return (
     <>
-      <button onClick={() => setOpenDialog(!openDialog)} className="h-14 bg-[#123359] rounded-xl text-white font-medium">
-        Fazer uma pegunta
+      <button onClick={() => setOpenDialog(!openDialog)} className={triggerStyle}>
+        {children}
       </button>
 
       <Dialog open={openDialog} setOpen={setOpenDialog} onClick={createQuestion} title="Criar nova pergunta" triggerText="Postar pergunta">

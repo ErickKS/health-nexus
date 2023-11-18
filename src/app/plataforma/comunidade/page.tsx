@@ -25,7 +25,7 @@ export default function Comunidade() {
           </button>
         </div>
 
-        <CreateQuestion />
+        <CreateQuestion triggerStyle="h-14 bg-[#123359] rounded-xl text-white font-medium">Fazer uma pegunta</CreateQuestion>
       </div>
 
       <div className="grid grid-cols-3 gap-4 h-fit">

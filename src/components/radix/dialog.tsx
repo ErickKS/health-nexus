@@ -17,9 +17,9 @@ export function Dialog({ open, setOpen, title, triggerText, onClick, children }:
   return (
     <DialogPrimitive.Root open={open} onOpenChange={setOpen}>
       <DialogPrimitive.Portal>
-        <DialogPrimitive.Overlay className="fixed inset-0 bg-black/50 backdrop-blur-sm" />
+        <DialogPrimitive.Overlay className="fixed inset-0 z-20 bg-black/50 backdrop-blur-sm" />
 
-        <DialogPrimitive.Content className="fixed left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 w-full max-w-[498px] p-4 outline-none">
+        <DialogPrimitive.Content className="fixed z-30 left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 w-full max-w-[498px] p-4 outline-none">
           <div className="flex flex-col gap-6 p-6 rounded-xl bg-white text-black">
             <h3>{title}</h3>
 
