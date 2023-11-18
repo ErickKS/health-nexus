@@ -8,6 +8,7 @@ import { CardQuestion } from "@/components/plataforma/card-question";
 import { CreateQuestion } from "@/components/plataforma/create-question";
 import { PlusCircle } from "lucide-react";
 import Link from "next/link";
+import clsx from "clsx";
 
 export default function Plataforma() {
   const [greeting, setGreeting] = useState<string | null>(null);
@@ -67,16 +68,26 @@ export default function Plataforma() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-8">
+          <div className="grid grid-rows-2 gap-8">
             <Link
               href={"/plataforma/insights/criar"}
-              className="flex flex-col justify-center items-center gap-1 h-full rounded-xl text-[#2E2E2E] font-medium shadow-main transition-all hover:bg-[#ECF2FF]"
+              className={clsx(
+                "flex flex-col justify-center items-center gap-1 h-full bg-[#ECF2FF] border border-[#E5EAEF] rounded-xl outline-none transition-all",
+                "text-[#2E2E2E] font-medium",
+                "hover:scale-[1.02] focus:scale-[1.02] hover:border-[#123359] focus:border-[#123359]"
+              )}
             >
               <PlusCircle />
               Criar um insight
             </Link>
 
-            <CreateQuestion triggerStyle="flex flex-col justify-center items-center gap-1 h-full rounded-xl text-[#2E2E2E] font-medium  shadow-main transition-all hover:bg-[#ECF2FF]">
+            <CreateQuestion
+              triggerStyle={clsx(
+                "flex flex-col justify-center items-center gap-1 h-full bg-[#123359] rounded-xl shadow-main transition-all",
+                "text-white font-medium",
+                "hover:scale-[1.02] focus:scale-[1.02]"
+              )}
+            >
               <PlusCircle />
               Fazer uma pegunta
             </CreateQuestion>
