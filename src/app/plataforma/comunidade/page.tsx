@@ -1,6 +1,8 @@
-import { CardQuestion } from "@/components/plataforma/card-question";
-import { Search } from "lucide-react";
 import Image from "next/image";
+import { Search } from "lucide-react";
+
+import { CreateQuestion } from "@/components/plataforma/create-question";
+import { CardQuestion } from "@/components/plataforma/card-question";
 
 export default function Comunidade() {
   return (
@@ -23,7 +25,7 @@ export default function Comunidade() {
           </button>
         </div>
 
-        <button className="h-14 bg-[#123359] rounded-xl text-white font-medium">Fazer uma pegunta</button>
+        <CreateQuestion />
       </div>
 
       <div className="grid grid-cols-3 gap-4 h-fit">
