@@ -7,31 +7,21 @@ export function Chat() {
   function sendMessage() {}
 
   return (
-    <section className="flex rounded-lg shadow-main">
-      <div className="flex flex-col gap-4 w-64 p-6 border-r border-[#E5EAEF]">
-        <div className="flex flex-col justify-center items-center gap-2">
+    <section className="grid grid-rows-[56px_1fr] rounded-lg shadow-main">
+      <div className="flex justify-between items-center gap-4 h-14 px-6 border-b border-[#E5EAEF]">
+        <div className="flex items-center gap-2">
           <div className="relative h-11 w-11 rounded-full bg-[#E5EAEF]">
             <Image src={"/img/plataforma/bot.png"} alt="" height={44} width={44} />
 
             <div className="absolute bottom-1 right-1 h-2 w-2 bg-green-500 rounded-full animate-ping" />
             <div className="absolute bottom-1 right-1 h-2 w-2 bg-green-500 rounded-full" />
           </div>
-          
+
           <span>Assistente NexMind</span>
         </div>
 
-        <div className="h-[2px] w-full bg-[#E5EAEF]" />
-
-        <div className="flex flex-col items-center gap-4 h-full">
-          <h3 className="mb-1">Suas conversas</h3>
-
-          <div className="flex justify-center items-center h-10 w-full border border-[#E5EAEF] rounded-lg text-sm font-medium">
-            Conversa sobre tal...
-          </div>
-        </div>
-
-        <button className="flex justify-center items-center gap-2 py-[10px] bg-[#123359] rounded-lg text-sm text-white font-medium">
-          <Plus size={20} />
+        <button className="flex justify-center items-center gap-2 h-9 px-4 bg-[#123359] rounded-lg text-sm text-white font-medium">
+          <Plus size={20} className="max-xs:hidden" />
           Nova conversa
         </button>
       </div>
