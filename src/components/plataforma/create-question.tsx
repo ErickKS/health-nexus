@@ -2,7 +2,7 @@
 
 import { ReactNode, useState } from "react";
 
-import { Dialog } from "../radix/dialog";
+import { DialogWithAction } from "../radix/dialog";
 
 interface CreateQuestionProps {
   triggerStyle: string;
@@ -20,7 +20,13 @@ export function CreateQuestion({ triggerStyle, children }: CreateQuestionProps) 
         {children}
       </button>
 
-      <Dialog open={openDialog} setOpen={setOpenDialog} onClick={createQuestion} title="Criar nova pergunta" triggerText="Postar pergunta">
+      <DialogWithAction
+        open={openDialog}
+        setOpen={setOpenDialog}
+        onClick={createQuestion}
+        title="Criar nova pergunta"
+        triggerText="Postar pergunta"
+      >
         <div className="flex flex-col gap-1 text-[#2E2E2E]">
           <label className="font-medium">Conteúdo da pergunta</label>
 
@@ -31,7 +37,7 @@ export function CreateQuestion({ triggerStyle, children }: CreateQuestionProps) 
             className="h-48 p-4 border border-[#E5EAEF] rounded-lg outline-none resize-none transition-all focus:border-[#123359]"
           />
         </div>
-      </Dialog>
+      </DialogWithAction>
     </>
   );
 }
