@@ -1,14 +1,14 @@
 "use client";
 
-import { Plus, SendHorizontal } from "lucide-react";
 import Image from "next/image";
+import { Plus, SendHorizontal } from "lucide-react";
 
 export function Chat() {
   function sendMessage() {}
 
   return (
-    <section className="grid grid-rows-[56px_1fr] rounded-lg shadow-main">
-      <div className="flex justify-between items-center gap-4 h-14 px-6 border-b border-[#E5EAEF]">
+    <section className="flex flex-col rounded-lg shadow-main h-full">
+      <div className="flex justify-between items-center gap-4 h-14 px-4 border-b border-[#E5EAEF] sm:px-6">
         <div className="flex items-center gap-2">
           <div className="relative h-11 w-11 rounded-full bg-[#E5EAEF]">
             <Image src={"/img/plataforma/bot.png"} alt="" height={44} width={44} />
@@ -17,7 +17,7 @@ export function Chat() {
             <div className="absolute bottom-1 right-1 h-2 w-2 bg-green-500 rounded-full" />
           </div>
 
-          <span>Assistente NexMind</span>
+          <span className="font-medium">NexMind</span>
         </div>
 
         <button className="flex justify-center items-center gap-2 h-9 px-4 bg-[#123359] rounded-lg text-sm text-white font-medium">
@@ -26,7 +26,7 @@ export function Chat() {
         </button>
       </div>
 
-      <div className="grid grid-rows-[1fr_56px] w-full">
+      <div className="grid grid-rows-[1fr_56px] w-full min-h-[440px] h-full">
         <div className="flex flex-col gap-6 py-10 px-6">
           <div className="relative flex items-center px-4 h-16 border border-[#E5EAEF] rounded-lg">
             <div className="absolute -top-[11px] flex justify-center items-center px-3 h-5 bg-[#123359] rounded-full text-xs text-white font-medium">

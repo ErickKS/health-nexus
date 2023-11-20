@@ -15,7 +15,7 @@ export function ImageUpload() {
       >
         <Image src={"/img/plataforma/img-upload.svg"} alt="" height={32} width={32} />
 
-        <span>Clique aqui para selecionar sua imagem</span>
+        <span className="text-center">Clique aqui para selecionar sua imagem</span>
 
         <input
           type="file"

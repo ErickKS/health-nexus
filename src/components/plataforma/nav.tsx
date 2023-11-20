@@ -3,9 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import clsx from "clsx";
 import { Home, Lightbulb, Power, MessagesSquare, Sparkles, Bell, HelpCircle, X, Menu } from "lucide-react";
-import { useState } from "react";
 
 const pages = [
   {
@@ -32,8 +32,11 @@ const pages = [
 
 export function Nav() {
   const pathname = usePathname();
-
   const [sidebarOpened, setSidebarOpened] = useState(false);
+
+  useEffect(() => {
+    closeSidebar();
+  }, [pathname]);
 
   function openSidebar() {
     setSidebarOpened(true);
@@ -49,7 +52,7 @@ export function Nav() {
     <>
       <aside
         className={clsx(
-          "fixed left-0 top-0 z-50 flex flex-col justify-between items-center w-[269px] h-screen p-4 bg-white border-r border-[#E5EAEF] transition-all lg:translate-x-0",
+          "fixed left-0 top-0 z-50 flex flex-col justify-between items-center w-[224px] h-screen p-4 bg-white border-r border-[#E5EAEF] transition-all lg:translate-x-0 xs:w-[269px]",
           { "translate-x-0": sidebarOpened },
           { "-translate-x-[365px]": !sidebarOpened }
         )}

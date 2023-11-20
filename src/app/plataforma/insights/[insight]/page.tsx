@@ -1,4 +1,3 @@
-import { ThumbsUp } from "lucide-react";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 
@@ -19,13 +18,8 @@ export default function Insight() {
 
       <div className="flex flex-col rounded-b-xl shadow-main">
         <div className="text-[#2E2E2E] pt-8 p-6 border-b border-[#E5EAEF]">
-          <span>Dra. Elizabeth II</span>
+          <span>Dra. Elizabeth</span>
           <h2 className="mt-1 mb-4">Saiba como viver até os 96 anos</h2>
-
-          <button className="flex items-center gap-2 h-8 px-4 bg-[#E5EAEF] rounded-full text-sm font-medium transition-all hover:bg-[#123359] hover:text-white">
-            <ThumbsUp size={20} />
-            22
-          </button>
         </div>
 
         <div className="p-6 space-y-6 leading-relaxed">

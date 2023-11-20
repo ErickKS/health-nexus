@@ -1,14 +1,14 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useEffect } from "react";
+import clsx from "clsx";
+import { PlusCircle } from "lucide-react";
 
 import { CardInsight } from "@/components/plataforma/card-insight";
 import { CardQuestion } from "@/components/plataforma/card-question";
 import { CreateQuestion } from "@/components/plataforma/create-question";
-import { PlusCircle } from "lucide-react";
-import Link from "next/link";
-import clsx from "clsx";
 
 export default function Plataforma() {
   const [greeting, setGreeting] = useState<string | null>(null);
@@ -31,15 +31,15 @@ export default function Plataforma() {
 
   return (
     <div className="grid grid-rows-[200px_1fr] gap-8 h-full">
-      <div className="relative flex justify-between items-center h-[200px] px-6 bg-[#ECF2FF] rounded-xl overflow-hidden">
-        <div className="space-y-1">
-          <h3>{greeting} Erick</h3>
-          <h1>Bem-vindo</h1>
+      <div className="relative flex justify-center items-center h-[200px] px-6 bg-[#ECF2FF] rounded-xl overflow-hidden sm:justify-between">
+        <div className="flex flex-col justify-center items-center gap-1 sm:items-start">
+          <h3 className="max-xs:text-xl">{greeting} Erick</h3>
+          <h1 className="max-xs:text-4xl max-sm:text-5xl">Bem-vindo</h1>
         </div>
 
-        <Image src={"/img/plataforma/3d-home.png"} alt="" height={144} width={164.44} priority />
+        <Image src={"/img/plataforma/3d-home.png"} alt="" height={144} width={164.44} priority className="max-sm:hidden" />
 
-        <Image src={"/img/plataforma/circle-1.svg"} alt="" height={228} width={228} className="absolute -left-10" />
+        <Image src={"/img/plataforma/circle-1.svg"} alt="" height={228} width={228} className="absolute -left-24" />
         <Image src={"/img/plataforma/circle-2.svg"} alt="" height={130} width={130} className="absolute right-0 -top-8" />
       </div>
 
@@ -54,21 +54,34 @@ export default function Plataforma() {
               image="/img/plataforma/insight-1.jpg"
               size="sm"
             />
-            <CardInsight title="Como aliviar o estresse" author="Dr. Jack Sparrow" image="/img/plataforma/insight-2.jpg" size="sm" />
+
+            <CardInsight
+              title="Como aliviar o estresse"
+              author="Dr. Jack Sparrow"
+              image="/img/plataforma/insight-2.jpg"
+              size="sm"
+              additionalClass="max-sm:hidden"
+            />
           </div>
         </div>
 
-        <div className="grid grid-cols-[1fr_208px] gap-8">
+        <div className="grid gap-8 lg:grid-cols-[1fr_208px]">
           <div className="flex flex-col gap-5 p-6 rounded-xl shadow-main">
             <h4>Ajude outras pessoas</h4>
 
             <div className="flex gap-4">
-              <CardQuestion date="16 de novembro" question="Tem algum chá caseiro que alivia a dor de cabeça?" comments={0} />
-              <CardQuestion date="16 de novembro" question="Tem algum chá caseiro que alivia a dor de cabeça?" comments={2} />
+              <CardQuestion id={"1"} date="16 de novembro" question="Qual remédio reduz os “efeitos colaterais” da lactose?" comments={4} />
+
+              <CardQuestion
+                date="16 de novembro"
+                question="Tem algum chá caseiro que alivia a dor de cabeça?"
+                comments={1}
+                additionalClass="max-sm:hidden"
+              />
             </div>
           </div>
 
-          <div className="grid grid-rows-2 gap-8">
+          <div className={clsx("grid gap-6 h-48", "xs:gap-8 xs:grid-cols-2 xs:h-20", "lg:grid-rows-2 lg:grid-cols-1 lg:h-full")}>
             <Link
               href={"/plataforma/insights/criar"}
               className={clsx(
