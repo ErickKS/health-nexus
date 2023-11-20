@@ -50,10 +50,10 @@ export function DialogWithoutAction({ open, setOpen, title, children }: DialogPr
         <DialogPrimitive.Overlay className="fixed inset-0 z-20 bg-black/50 backdrop-blur-sm" />
 
         <DialogPrimitive.Content className="fixed z-30 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[498px] p-4 outline-none">
-          <div className="flex flex-col gap-6 p-6 rounded-xl bg-white text-black">
+          <div className="relative flex flex-col items-center gap-6 p-6 rounded-xl bg-white text-black">
             <h3>{title}</h3>
 
-            <main className="flex flex-col gap-4">{children}</main>
+            <main>{children}</main>
 
             <footer className="flex gap-2">
               <DialogPrimitive.Close className="h-10 w-fit px-4 rounded-lg bg-[#123359] text-white font-medium transition-all">

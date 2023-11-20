@@ -9,29 +9,55 @@
 }
 
 h1 {
-  font-family: var(--font-sulphur);
-  font-weight: 700;
+  font-weight: 600;
   font-size: 64px;
   line-height: 1;
 }
 
 h2 {
-  font-family: var(--font-sulphur);
-  font-weight: 700;
+  font-weight: 600;
   font-size: 30px;
   line-height: 1;
 }
 
 h3 {
-  font-family: var(--font-sulphur);
-  font-weight: 700;
+  font-weight: 600;
   font-size: 24px;
   line-height: 1;
 }
 
 h4 {
-  font-family: var(--font-sulphur);
-  font-weight: 700;
+  font-weight: 600;
   font-size: 20px;
   line-height: 1;
+}
+
+header,
+section {
+  margin-bottom: 120px;
+}
+
+.dots {
+  display: flex;
+  padding-block: 10px;
+  justify-content: center;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  margin-inline: 5px;
+  padding: 5px;
+  background: #ecf2ff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot:focus {
+  outline: none;
+}
+
+.dot.active {
+  background: #123359;
 }
