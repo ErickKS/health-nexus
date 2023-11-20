@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
-import { Home, Lightbulb, LogOut, MessagesSquare, Settings, Sparkles } from "lucide-react";
+import { Home, Lightbulb, Power, MessagesSquare, Sparkles } from "lucide-react";
 
 const pages = [
   {
@@ -13,17 +13,17 @@ const pages = [
     icon: <Home />,
   },
   {
-    route: "/insights",
+    route: "/plataforma/insights",
     name: "Insights",
     icon: <Lightbulb />,
   },
   {
-    route: "/forum",
-    name: "Fórum",
+    route: "/plataforma/comunidade",
+    name: "Comunidade",
     icon: <MessagesSquare />,
   },
   {
-    route: "/assistente",
+    route: "/plataforma/assistente",
     name: "Assistente",
     icon: <Sparkles />,
   },
@@ -41,32 +41,34 @@ export function Aside() {
       </div>
 
       <ul className="flex flex-col gap-4 w-full">
-        {pages.map(({ route, name, icon }) => (
-          <li key={name}>
-            <Link
-              href={route}
-              data-state={pathname === route ? "active" : "disabled"}
-              className={clsx(
-                "flex items-center gap-2 h-11 w-full px-3 rounded-lg font-medium transition-all hover:translate-x-1",
-                "data-[state=active]:bg-[#123359] data-[state=active]:text-white",
-                "data-[state=disabled]:text-[#2E2E2E]"
-              )}
-            >
-              {icon}
-              {name}
-            </Link>
-          </li>
-        ))}
+        {pages.map(({ route, name, icon }) => {
+          const isActive = pathname === route || (pathname.startsWith(`${route}/`) && route !== "/plataforma");
+
+          return (
+            <li key={name}>
+              <Link
+                href={route}
+                data-state={isActive ? "active" : "disabled"}
+                className={clsx(
+                  "flex items-center gap-2 h-11 w-full px-3 rounded-lg font-medium transition-all hover:translate-x-1",
+                  "data-[state=active]:bg-[#123359] data-[state=active]:text-white",
+                  "data-[state=disabled]:text-[#2E2E2E]"
+                )}
+              >
+                {icon}
+                {name}
+              </Link>
+            </li>
+          );
+        })}
       </ul>
 
-      <div className="flex flex-col gap-2 bg-[#F1F1F1] w-full rounded-lg">
-        <Link href={"/plataforma/configuracao"} className="flex items-center gap-2 h-11 w-full px-3 rounded-lg text-[#2E2E2E] font-medium">
-          <Settings />
-          Configurações
-        </Link>
-
-        <button onClick={logout} className="flex items-center gap-2 h-11 w-full px-3 rounded-lg text-[#2E2E2E] font-medium">
-          <LogOut />
+      <div className="flex items-end gap-2 h-[82.4px] w-full">
+        <button
+          onClick={logout}
+          className="flex justify-center items-center gap-2 h-11 w-full px-3 border rounded-lg border-[#E5EAEF] text-[#2E2E2E] font-medium"
+        >
+          <Power size={20} />
           Desconectar
         </button>
       </div>
