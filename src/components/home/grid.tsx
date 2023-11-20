@@ -70,20 +70,28 @@ function Svg4() {
 
 export function Grid() {
   return (
-    <div className="grid grid-cols-[240px_240px_1fr_240px_240px] items-end gap-5">
-      <Svg1 />
-      <Svg2 />
+    <div className="grid items-end justify-center gap-5 grid-cols-[240px_240px] sm:grid-cols-[240px_208px_240px] xl:grid-cols-[240px_240px_208px_240px_240px]">
+      <div className="max-xl:hidden">
+        <Svg1 />
+      </div>
+      <div>
+        <Svg2 />
+      </div>
 
-      <div className="flex flex-col justify-between h-[252px] pt-[50px] pb-3 px-3 bg-white rounded-3xl shadow-md font-medium">
+      <div className="hidden flex-col justify-between h-[252px] pt-[50px] pb-3 px-3 bg-[#ECF2FF] rounded-3xl font-medium shadow-md sm:flex">
         <span className="text-xl">Entre em nossa plataforma</span>
 
-        <Link href={"/login"} className="flex justify-center items-center h-10 px-6 bg-[#F1F1F1] border-2 border-[#2E2E2E] rounded-full">
+        <Link href={"/autenticacao/login"} className="flex justify-center items-center h-10 px-6 bg-white rounded-full shadow-main">
           Entrar
         </Link>
       </div>
 
-      <Svg3 />
-      <Svg4 />
+      <div>
+        <Svg3 />
+      </div>
+      <div className="max-xl:hidden">
+        <Svg4 />
+      </div>
     </div>
   );
 }

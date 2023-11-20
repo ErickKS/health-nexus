@@ -11,6 +11,15 @@ const config: Config = {
       screens: {
         xs: "440px",
       },
+      animation: {
+        levitation: "levitation 5s linear infinite",
+      },
+      keyframes: {
+        levitation: {
+          "0%, 100%": { transform: "translate(5%, 10%)" },
+          "50%": { transform: "translate(0, 0)" },
+        },
+      },
     },
   },
   plugins: [],

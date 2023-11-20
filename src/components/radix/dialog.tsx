@@ -49,8 +49,8 @@ export function DialogWithoutAction({ open, setOpen, title, children }: DialogPr
       <DialogPrimitive.Portal>
         <DialogPrimitive.Overlay className="fixed inset-0 z-20 bg-black/50 backdrop-blur-sm" />
 
-        <DialogPrimitive.Content className="fixed z-30 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[498px] p-4 outline-none">
-          <div className="relative flex flex-col items-center gap-6 p-6 rounded-xl bg-white text-black">
+        <DialogPrimitive.Content className="fixed z-30 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[336px] p-4 outline-none">
+          <div className="relative flex flex-col items-center gap-6 p-6 rounded-xl bg-white text-black overflow-hidden">
             <h3>{title}</h3>
 
             <main>{children}</main>

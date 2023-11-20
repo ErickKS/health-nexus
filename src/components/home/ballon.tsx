@@ -10,13 +10,7 @@ interface BallonProps {
 export function Ballon({ x, y, icon: Icon }: BallonProps) {
   return (
     <div
-      className={clsx(
-        "absolute flex justify-center items-center bg-white h-10 w-10 rounded-full",
-        x,
-        y
-        // "top-[" + y + "px]",
-        // "left-[" + x + "px]"
-      )}
+      className={clsx("absolute hidden justify-center items-center bg-[#ECF2FF] h-10 w-10 rounded-full animate-levitation sm:flex", x, y)}
     >
       <Icon />
     </div>

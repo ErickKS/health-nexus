@@ -2,8 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body {
+  scroll-behavior: smooth;
+}
+
 .container {
-  width: min(1248px, 100%);
+  max-width: 1280px;
+  width: 100%;
   padding-inline: 16px;
   margin-inline: auto;
 }

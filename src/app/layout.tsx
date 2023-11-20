@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import { Inter, Sulphur_Point } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
-const sulphur = Sulphur_Point({ subsets: ["latin"], weight: ["400", "700"], variable: "--font-sulphur" });
+const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Health Nexus",
@@ -14,7 +13,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
-      <body className={`${inter.className} ${sulphur.variable}`}>{children}</body>
+      <body className={jakarta.className}>{children}</body>
     </html>
   );
 }
