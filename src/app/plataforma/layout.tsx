@@ -1,29 +1,11 @@
-import { Aside } from "@/components/plataforma/aside";
-import { Bell, HelpCircle } from "lucide-react";
+import { Nav } from "@/components/plataforma/nav";
 
 export default function PlataformaLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="grid grid-cols-[269px_1fr] gap-8 min-h-screen bg-white">
-      <Aside />
+    <div className="min-h-screen pt-[104px] lg:pl-[301px] p-4 bg-white">
+      <Nav />
 
-      <main className="flex flex-col gap-8 max-w-[1152px] w-full py-4 mx-auto">
-        <div className="flex justify-between items-center py-3 px-6 rounded-xl shadow-main">
-          <span>Plataforma</span>
-
-          <div className="flex gap-4">
-            <button className="flex justify-center items-center h-8 w-8 rounded-lg border border-[#E5EAEF]">
-              <Bell size={20} />
-            </button>
-
-            <button className="flex justify-center items-center gap-2 h-8 px-4 rounded-lg font-medium border border-[#E5EAEF]">
-              <HelpCircle size={20} />
-              Suporte
-            </button>
-          </div>
-        </div>
-
-        <>{children}</>
-      </main>
+      <main className="flex flex-col gap-8 max-w-[1152px] w-full mx-auto pb-4">{children}</main>
     </div>
   );
 }
