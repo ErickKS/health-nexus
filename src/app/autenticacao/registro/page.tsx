@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { FormEvent, useState } from "react";
-import { UserCircle2, FileText, Mail, LockKeyhole } from "lucide-react";
+import { UserCircle2, FileText, Briefcase, Mail, LockKeyhole } from "lucide-react";
 
 import { Tabs } from "@/components/form/tabs";
 import { Input } from "@/components/form/input";
@@ -29,10 +29,16 @@ export default function Registro() {
 
       <form onSubmit={signUp} className="flex flex-col gap-4">
         <Input id="name" type="text" iconStart={UserCircle2} alert={false} placeholder="Seu nome" />
-
-        {type === "specialist" && <Input id="crm" type="text" iconStart={FileText} alert={false} placeholder="Seu CRM" />}
-
         <Input id="email" type="email" iconStart={Mail} alert={false} placeholder="Seu E-mail" />
+
+        {type === "specialist" && (
+          <>
+            <Input id="cpf" type="text" iconStart={FileText} alert={false} placeholder="Seu CPF" />
+            <Input id="crm" type="text" iconStart={FileText} alert={false} placeholder="Seu CRM" />
+            <Input id="profession" type="text" iconStart={Briefcase} alert={false} placeholder="Sua especialidade" />
+          </>
+        )}
+
         <Input id="password" type="password" iconStart={LockKeyhole} alert={false} placeholder="Sua senha" />
         <Input id="password-confirm" type="password" iconStart={LockKeyhole} alert={false} placeholder="Confirme sua senha" />
 
