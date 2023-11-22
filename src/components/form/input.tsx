@@ -37,7 +37,14 @@ export function Input({ type: Type, id, iconStart: IconStart, alert, ...props }:
         {...props}
       />
 
-      {type === "password" &&
+      {id === "password" &&
+        (type === "password" ? (
+          <Eye size={24} onClick={changeInputType} className="cursor-pointer" />
+        ) : (
+          <EyeOff size={24} onClick={changeInputType} className="cursor-pointer" />
+        ))}
+
+      {id === "password-confirm" &&
         (type === "password" ? (
           <Eye size={24} onClick={changeInputType} className="cursor-pointer" />
         ) : (

@@ -1,17 +1,69 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { Mail, LockKeyhole } from "lucide-react";
 
 import { Input } from "@/components/form/input";
-import { FormEvent } from "react";
-import { useRouter } from "next/navigation";
+
+import { Login, LoginAlert } from "@/types/auth";
 
 export default function Login() {
   const router = useRouter();
 
+  const [loginData, setLoginData] = useState<Login>({
+    email: "",
+    password: "",
+  });
+  const [loginDataAlert, setLoginDataAlert] = useState<LoginAlert>({
+    email: false,
+    password: false,
+  });
+
+  function handleInputChange(event: ChangeEvent<HTMLInputElement>) {
+    const { value, name } = event.target;
+
+    if (name === "email") {
+      setLoginDataAlert((prevLoginData) => ({
+        ...prevLoginData,
+        email: false,
+      }));
+      setLoginData((prevLoginData) => ({
+        ...prevLoginData,
+        email: value,
+      }));
+    }
+
+    if (name === "password") {
+      setLoginDataAlert((prevLoginData) => ({
+        ...prevLoginData,
+        password: false,
+      }));
+      setLoginData((prevLoginData) => ({
+        ...prevLoginData,
+        password: value,
+      }));
+    }
+  }
+
   function signIn(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    const areFieldsEmpty = Object.values(loginData).some((value) => !value);
+
+    if (areFieldsEmpty) {
+      setLoginDataAlert((prevLoginDataAlert) => {
+        for (const key in prevLoginDataAlert) {
+          if (prevLoginDataAlert.hasOwnProperty(key)) {
+            prevLoginDataAlert[key as keyof LoginAlert] = !loginData[key as keyof LoginAlert];
+          }
+        }
+        return { ...prevLoginDataAlert };
+      });
+
+      return;
+    }
 
     router.push("/plataforma");
   }
@@ -24,8 +76,22 @@ export default function Login() {
       </div>
 
       <form onSubmit={signIn} className="flex flex-col gap-4">
-        <Input id="email" type="email" iconStart={Mail} alert={false} placeholder="Seu E-mail" />
-        <Input id="password" type="password" iconStart={LockKeyhole} alert={false} placeholder="Sua Senha" />
+        <Input
+          id="email"
+          type="email"
+          onChange={handleInputChange}
+          iconStart={Mail}
+          placeholder="Seu E-mail"
+          alert={loginDataAlert.email}
+        />
+        <Input
+          id="password"
+          type="password"
+          onChange={handleInputChange}
+          iconStart={LockKeyhole}
+          placeholder="Sua Senha"
+          alert={loginDataAlert.password}
+        />
 
         <button type="submit" className="h-12 bg-[#123359] rounded-lg text-white font-medium mt-1">
           Entrar
@@ -38,7 +104,6 @@ export default function Login() {
           Registre-se
         </Link>
       </span>
-
     </>
   );
 }
