@@ -14,7 +14,7 @@ interface CardInsightProps {
 export function CardInsight({ id, title, author, image, size = "lg", additionalClass }: CardInsightProps) {
   return (
     <Link
-      href={`/plataforma/insights/${id}`}
+      href={id ? `/plataforma/insights/${id}` : ""}
       className={clsx(
         "relative flex flex-col justify-end p-6 w-full transition-all hover:scale-[1.01]",
         "text-white",

@@ -19,7 +19,7 @@ export default function Registro() {
   }
 
   return (
-    <main className="flex flex-col justify-center gap-6 mt-4 text-center">
+    <>
       <div className="flex flex-col items-center gap-1">
         <h2>Crie sua conta</h2>
         <span className="text-lg">Junte-se a nossa comunidade</span>
@@ -53,6 +53,6 @@ export default function Registro() {
           Login
         </Link>
       </span>
-    </main>
+    </>
   );
 }

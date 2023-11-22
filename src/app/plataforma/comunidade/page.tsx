@@ -32,11 +32,15 @@ export default function Comunidade() {
       </div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 h-fit">
-        <CardQuestion date="16 de novembro" question="Tem algum chá caseiro que alivia a dor de cabeça?" comments={0} />
+        <CardQuestion id={"1"} date="16 de novembro" question="Qual remédio reduz os “efeitos colaterais” da lactose?" comments={3} />
+
         <CardQuestion date="16 de novembro" question="Tem algum chá caseiro que alivia a dor de cabeça?" comments={2} />
-        <CardQuestion date="16 de novembro" question="Tem algum chá caseiro que alivia a dor de cabeça?" comments={3} />
-        <CardQuestion date="16 de novembro" question="Tem algum chá caseiro que alivia a dor de cabeça?" comments={4} />
-        <CardQuestion date="16 de novembro" question="Tem algum chá caseiro que alivia a dor de cabeça?" comments={2} />
+
+        <CardQuestion date="15 de novembro" question="A meditação traz algum beneficio para nossa saúde?" comments={3} />
+
+        <CardQuestion date="14 de novembro" question="Como posso aliviar as dores das queimaduras da insolação ?" comments={2} />
+
+        <CardQuestion date="14 de novembro" question="Tem algum problem em dar leite de vaca para meu bebê tomar?" comments={2} />
       </div>
     </>
   );

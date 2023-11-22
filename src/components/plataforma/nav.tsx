@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
 import { Home, Lightbulb, Power, MessagesSquare, Sparkles, Bell, HelpCircle, X, Menu } from "lucide-react";
@@ -31,6 +31,7 @@ const pages = [
 ];
 
 export function Nav() {
+  const router = useRouter();
   const pathname = usePathname();
   const [sidebarOpened, setSidebarOpened] = useState(false);
 
@@ -46,7 +47,9 @@ export function Nav() {
     setSidebarOpened(false);
   }
 
-  function logout() {}
+  function logout() {
+    router.push("/autenticacao/login");
+  }
 
   return (
     <>
@@ -85,7 +88,11 @@ export function Nav() {
         <div className="flex items-end gap-2 h-[86.59px] w-full">
           <button
             onClick={logout}
-            className="flex justify-center items-center gap-2 h-11 w-full px-3 border rounded-lg border-[#E5EAEF] text-[#2E2E2E] font-medium"
+            className={clsx(
+              "flex justify-center items-center gap-2 h-11 w-full px-3 border rounded-lg border-[#E5EAEF] outline-none transition-all",
+              "text-[#2E2E2E] font-medium",
+              "hover:border-red-500 hover:bg-red-500/10 focus:border-red-500 focus:bg-red-500/10"
+            )}
           >
             <Power size={20} />
             Desconectar
@@ -113,11 +120,11 @@ export function Nav() {
           </div>
 
           <div className="flex gap-4">
-            <button className="flex justify-center items-center h-8 w-8 rounded-lg border border-[#E5EAEF]">
+            <button className="flex justify-center items-center h-8 w-8 rounded-lg border border-[#E5EAEF] transition-all hover:bg-[#E5EAEF]">
               <Bell size={20} />
             </button>
 
-            <button className="flex justify-center items-center gap-2 h-8 px-4 rounded-lg font-medium border border-[#E5EAEF]">
+            <button className="flex justify-center items-center gap-2 h-8 px-4 rounded-lg font-medium border border-[#E5EAEF] transition-all hover:bg-[#E5EAEF]">
               <HelpCircle size={20} />
               Suporte
             </button>

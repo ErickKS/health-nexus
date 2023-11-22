@@ -49,6 +49,7 @@ export default function Plataforma() {
 
           <div className="flex gap-4">
             <CardInsight
+              id="1"
               title="Saiba como viver  até os 96 anos"
               author="Dra. Elizabeth II"
               image="/img/plataforma/insight-1.jpg"

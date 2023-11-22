@@ -17,7 +17,7 @@ export default function Login() {
   }
 
   return (
-    <main className="flex flex-col justify-center gap-6 mt-4 text-center">
+    <>
       <div className="flex flex-col items-center gap-1">
         <h2>Bem-vindo</h2>
         <span className="text-lg">Faça seu login na plataforma</span>
@@ -38,6 +38,7 @@ export default function Login() {
           Registre-se
         </Link>
       </span>
-    </main>
+
+    </>
   );
 }

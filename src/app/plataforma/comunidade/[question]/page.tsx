@@ -1,6 +1,6 @@
-import { Comment } from "@/components/plataforma/comment";
-import { PostComment } from "@/components/plataforma/post-comment";
 import { useParams } from "next/navigation";
+
+import { Comments } from "@/components/plataforma/comments";
 
 export default function Question() {
   // const params = useParams();
@@ -17,20 +17,7 @@ export default function Question() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-6 p-6">
-        <h3>Comentários</h3>
-
-        <div className="flex flex-col gap-4">
-          <Comment name="Rodolfo Lactovitz" content="Defina “efeitos coláterais”." />
-          <Comment name="Claudia Leite" content="Digamos que é uma reação química perigosa dentro do nosso intestino." />
-          <Comment name="Alice Pedrada" content="Ahh, eu recomendo aquele remédio “Lacto Purga”, ele reduz bastante o efeito do leite." />
-          <Comment name="Claudia Leite" content="Realmente, esse remédio é perfeito!! Obrigada." />
-        </div>
-
-        <h3>Contribua com sua resposta</h3>
-
-        <PostComment />
-      </div>
+      <Comments />
     </div>
   );
 }

@@ -13,11 +13,16 @@ const config: Config = {
       },
       animation: {
         levitation: "levitation 5s linear infinite",
+        blink: "blink 1s infinite",
       },
       keyframes: {
         levitation: {
           "0%, 100%": { transform: "translate(5%, 10%)" },
           "50%": { transform: "translate(0, 0)" },
+        },
+        blink: {
+          from: { opacity: "0" },
+          to: { opacity: "1" },
         },
       },
     },
