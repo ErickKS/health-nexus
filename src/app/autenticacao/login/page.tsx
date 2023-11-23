@@ -2,66 +2,44 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { ChangeEvent, FormEvent, useState } from "react";
+import { FormEvent } from "react";
 import { Mail, LockKeyhole } from "lucide-react";
 
-import { Input } from "@/components/form/input";
+import { useValidate } from "@/hooks/useValidate";
+import { Login } from "@/types/auth";
+import { emptyLogin } from "@/constants/auth";
 
-import { Login, LoginAlert } from "@/types/auth";
+import { Input } from "@/components/form/input";
 
 export default function Login() {
   const router = useRouter();
 
-  const [loginData, setLoginData] = useState<Login>({
-    email: "",
-    password: "",
+  const login = useValidate<Login>({
+    initialValues: emptyLogin,
+    validate: (values) => {
+      const errors: { [key: string]: string } = { email: "", password: "" };
+
+      if (!values.email) {
+        errors.email = "Campo obrigatório";
+      } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+        errors.email = "Por favor, insira um email válido";
+      }
+
+      if (!values.password) {
+        errors.password = "Campo obrigatório";
+      }
+
+      return errors;
+    },
   });
-  const [loginDataAlert, setLoginDataAlert] = useState<LoginAlert>({
-    email: false,
-    password: false,
-  });
 
-  function handleInputChange(event: ChangeEvent<HTMLInputElement>) {
-    const { value, name } = event.target;
-
-    if (name === "email") {
-      setLoginDataAlert((prevLoginData) => ({
-        ...prevLoginData,
-        email: false,
-      }));
-      setLoginData((prevLoginData) => ({
-        ...prevLoginData,
-        email: value,
-      }));
-    }
-
-    if (name === "password") {
-      setLoginDataAlert((prevLoginData) => ({
-        ...prevLoginData,
-        password: false,
-      }));
-      setLoginData((prevLoginData) => ({
-        ...prevLoginData,
-        password: value,
-      }));
-    }
-  }
+  const isValidLogin = Object.values(login.errors).every((error) => !error);
 
   function signIn(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    const areFieldsEmpty = Object.values(loginData).some((value) => !value);
-
-    if (areFieldsEmpty) {
-      setLoginDataAlert((prevLoginDataAlert) => {
-        for (const key in prevLoginDataAlert) {
-          if (prevLoginDataAlert.hasOwnProperty(key)) {
-            prevLoginDataAlert[key as keyof LoginAlert] = !loginData[key as keyof LoginAlert];
-          }
-        }
-        return { ...prevLoginDataAlert };
-      });
-
+    if (!isValidLogin) {
+      login.handleSubmit();
       return;
     }
 
@@ -77,20 +55,22 @@ export default function Login() {
 
       <form onSubmit={signIn} className="flex flex-col gap-4">
         <Input
-          id="email"
           type="email"
-          onChange={handleInputChange}
-          iconStart={Mail}
+          id="email"
+          value={login.values.email}
+          onChange={login.handleChange}
+          iconStart={<Mail />}
           placeholder="Seu E-mail"
-          alert={loginDataAlert.email}
+          error={login.touched.email && login.errors.email}
         />
         <Input
-          id="password"
           type="password"
-          onChange={handleInputChange}
-          iconStart={LockKeyhole}
+          id="password"
+          value={login.values.password}
+          onChange={login.handleChange}
+          iconStart={<LockKeyhole />}
           placeholder="Sua Senha"
-          alert={loginDataAlert.password}
+          error={login.touched.password && login.errors.password}
         />
 
         <button type="submit" className="h-12 bg-[#123359] rounded-lg text-white font-medium mt-1">

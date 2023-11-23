@@ -3,7 +3,19 @@ export interface Login {
   password: string;
 }
 
-export interface LoginAlert {
-  email: boolean;
-  password: boolean;
+export interface RegisterUser {
+  name: string;
+  email: string;
+  password: string;
+  passwordConfirm: string;
+}
+
+export interface RegisterSpecialist {
+  name: string;
+  email: string;
+  cpf: string;
+  crm: string;
+  profession: string;
+  password: string;
+  passwordConfirm: string;
 }
