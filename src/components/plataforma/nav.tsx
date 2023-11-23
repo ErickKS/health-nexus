@@ -48,6 +48,8 @@ export function Nav() {
   }
 
   function logout() {
+    sessionStorage.clear();
+
     router.push("/autenticacao/login");
   }
 

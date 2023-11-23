@@ -14,6 +14,8 @@ const config: Config = {
       animation: {
         levitation: "levitation 5s linear infinite",
         blink: "blink 1s infinite",
+        hide: "hide 100ms ease-in",
+        slideIn: "slideIn 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95) forwards",
       },
       keyframes: {
         levitation: {
@@ -23,6 +25,14 @@ const config: Config = {
         blink: {
           from: { opacity: "0" },
           to: { opacity: "1" },
+        },
+        hide: {
+          from: { opacity: "1" },
+          to: { opacity: "0" },
+        },
+        slideIn: {
+          from: { opacity: "0", transform: "translateY(-24px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
         },
       },
     },

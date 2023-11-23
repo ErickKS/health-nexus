@@ -12,7 +12,7 @@ export function Comments() {
   const [comments, setComments] = useState([
     { name: "Rodolfo Lactovitz", content: "Defina 'efeitos colaterais'." },
     { name: "Claudia Leite", content: "Digamos que é uma reação química perigosa dentro do nosso intestino." },
-    { name: "Alice Pedrada", content: "Ahh, eu recomendo aquele remédio 'Lacto Purga', ele reduz bastante o efeito do leite." },
+    { name: "Alice Pedrada", content: "Ahh, eu recomendo aquele remédio 'Enzilac', ele reduz bastante o efeito do leite." },
   ]);
 
   function handleTextareaChange(event: ChangeEvent<HTMLTextAreaElement>) {
@@ -29,7 +29,11 @@ export function Comments() {
       return;
     }
 
-    const newComment = { name: "Erick Kuwahara", content: commentContent };
+    const name = sessionStorage.getItem("name");
+
+    if (!name) return;
+
+    const newComment = { name, content: commentContent };
 
     setComments((prevComments) => [...prevComments, newComment]);
     setCommentContent("");

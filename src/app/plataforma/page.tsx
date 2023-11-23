@@ -19,13 +19,16 @@ export default function Plataforma() {
 
   function getGreeting() {
     const time = new Date().getHours();
+    const name = sessionStorage.getItem("name")?.split(" ");
+
+    if (!name) return;
 
     if (time >= 6 && time < 12) {
-      setGreeting("Bom dia, ");
+      setGreeting(`Bom dia, ${name[0]}`);
     } else if (time >= 12 && time < 18) {
-      setGreeting("Boa tarde, ");
+      setGreeting(`Boa tarde, ${name[0]}`);
     } else {
-      setGreeting("Boa noite, ");
+      setGreeting(`Boa noite, ${name[0]}`);
     }
   }
 
@@ -33,7 +36,7 @@ export default function Plataforma() {
     <div className="grid grid-rows-[200px_1fr] gap-8 h-full">
       <div className="relative flex justify-center items-center h-[200px] px-6 bg-[#ECF2FF] rounded-xl overflow-hidden sm:justify-between">
         <div className="flex flex-col justify-center items-center gap-1 sm:items-start">
-          <h3 className="max-xs:text-xl">{greeting} Erick</h3>
+          <h3 className="max-xs:text-xl">{greeting}</h3>
           <h1 className="max-xs:text-4xl max-sm:text-5xl">Bem-vindo</h1>
         </div>
 
@@ -51,7 +54,7 @@ export default function Plataforma() {
             <CardInsight
               id="1"
               title="Saiba como viver  até os 96 anos"
-              author="Dra. Elizabeth II"
+              author="Dra. Elizabeth"
               image="/img/plataforma/insight-1.jpg"
               size="sm"
             />

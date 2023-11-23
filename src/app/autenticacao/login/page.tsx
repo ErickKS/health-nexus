@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
+import axios from "axios";
 import { Mail, LockKeyhole } from "lucide-react";
 
 import { useValidate } from "@/hooks/useValidate";
@@ -10,9 +11,11 @@ import { Login } from "@/types/auth";
 import { emptyLogin } from "@/constants/auth";
 
 import { Input } from "@/components/form/input";
+import { Toast } from "@/components/radix/toast";
 
 export default function Login() {
   const router = useRouter();
+  const [toastActive, setToastActive] = useState(false);
 
   const login = useValidate<Login>({
     initialValues: emptyLogin,
@@ -33,17 +36,48 @@ export default function Login() {
     },
   });
 
-  const isValidLogin = Object.values(login.errors).every((error) => !error);
+  function handleToast() {
+    setToastActive(false);
+    setTimeout(() => setToastActive(true), 100);
+  }
 
-  function signIn(event: FormEvent<HTMLFormElement>) {
+  async function signIn(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    const isValidLogin = Object.values(login.errors).every((error) => !error);
 
     if (!isValidLogin) {
       login.handleSubmit();
       return;
     }
 
-    router.push("/plataforma");
+    const { email, password } = login.values;
+
+    // try {
+    // const response = await axios.get("http://localhost:8080/ProjetoHealthNexus/rest/login/");
+    // const response = await axios.post(
+    //   "http://localhost:8080/ProjetoHealthNexus/rest/login/",
+    //   `email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`,
+    //   {
+    //     headers: {
+    //       "Content-Type": "application/x-www-form-urlencoded",
+    //     },
+    //   }
+    // );
+    // console.log(response.data);
+    // } catch (error) {
+    //   console.error("Erro ao fazer login");
+    // }
+
+    if (email !== "erick@email.com" || password !== "12345678") {
+      handleToast();
+    } else {
+      const name = "Erick Kuwahara";
+
+      sessionStorage.setItem("name", name);
+
+      router.push("/plataforma");
+    }
   }
 
   return (
@@ -84,6 +118,14 @@ export default function Login() {
           Registre-se
         </Link>
       </span>
+
+      <div className="fixed top-4 right-1/2 translate-x-1/2 max-w-[384px] w-full">
+        <Toast
+          open={toastActive}
+          onOpenChange={() => setToastActive(!toastActive)}
+          alert={"E-mail ou senha incorretos. Por favor, verifique e tente novamente."}
+        />
+      </div>
     </>
   );
 }

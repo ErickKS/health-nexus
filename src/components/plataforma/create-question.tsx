@@ -1,8 +1,9 @@
 "use client";
 
-import { ReactNode, useState } from "react";
+import { ChangeEvent, ReactNode, useState } from "react";
 
 import { DialogWithAction } from "../radix/dialog";
+import clsx from "clsx";
 
 interface CreateQuestionProps {
   triggerStyle: string;
@@ -11,8 +12,24 @@ interface CreateQuestionProps {
 
 export function CreateQuestion({ triggerStyle, children }: CreateQuestionProps) {
   const [openDialog, setOpenDialog] = useState(false);
+  const [question, setQuestion] = useState("");
+  const [questionAlert, setQuestionAlert] = useState(false);
 
-  function createQuestion() {}
+  function handleInputChange(event: ChangeEvent<HTMLTextAreaElement>) {
+    const { value } = event.target;
+
+    setQuestionAlert(false);
+    setQuestion(value);
+  }
+
+  function createQuestion() {
+    if (!question) {
+      setQuestionAlert(true);
+      return;
+    }
+
+    setOpenDialog(!openDialog);
+  }
 
   return (
     <>
@@ -33,8 +50,14 @@ export function CreateQuestion({ triggerStyle, children }: CreateQuestionProps) 
           <textarea
             id="question"
             name="question"
+            value={question}
+            onChange={handleInputChange}
             placeholder="Ex: Benefícios da batata"
-            className="h-48 p-4 border border-[#E5EAEF] rounded-lg outline-none resize-none transition-all focus:border-[#123359]"
+            className={clsx(
+              "h-48 p-4 border border-[#E5EAEF] rounded-lg outline-none resize-none transition-all focus:border-[#123359]",
+              { "border-red-600": questionAlert },
+              { "border-[#E5EAEF]": !questionAlert }
+            )}
           />
         </div>
       </DialogWithAction>
