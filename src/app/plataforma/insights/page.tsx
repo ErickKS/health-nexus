@@ -5,7 +5,7 @@ import { CardInsight } from "@/components/plataforma/card-insight";
 export default function Insights() {
   return (
     <>
-      <div className="relative flex justify-center items-center h-[200px] px-6 bg-[#ECF2FF] rounded-xl overflow-hidden sm:justify-between">
+      <div className="relative flex justify-center items-center h-[200px] px-6 bg-blue-light rounded-xl overflow-hidden sm:justify-between">
         <div className="flex flex-col justify-center items-center gap-2 text-center sm:items-start">
           <h2 className="max-xs:text-3xl">Indicações de especialistas</h2>
           <h3 className="font-normal">Veja os últimos destaques</h3>

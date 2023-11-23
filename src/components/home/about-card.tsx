@@ -8,7 +8,7 @@ interface AboutCardProps {
 
 export function AboutCard({ icon: Icon, title, children }: AboutCardProps) {
   return (
-    <div className="flex flex-col gap-4 p-8 bg-[#ECF2FF] rounded-xl shadow-main transition-all hover:scale-[1.01]">
+    <div className="flex flex-col gap-4 p-8 bg-blue-light rounded-xl shadow-main transition-all hover:scale-[1.01]">
       <div>
         <Icon size={32} strokeWidth={1.5} />
       </div>

@@ -28,7 +28,7 @@ export default function Registro() {
 
       <span>
         Já possui uma conta?{" "}
-        <Link href={"/autenticacao/login"} className="text-[#103157] font-semibold hover:underline">
+        <Link href={"/autenticacao/login"} className="text-primary font-semibold hover:underline">
           Login
         </Link>
       </span>

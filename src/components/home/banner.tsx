@@ -15,7 +15,7 @@ export function Banner() {
 
         <a
           href="#partnership"
-          className="relative z-10 flex justify-center items-center h-10 px-6 border-2 border-[#2E2E2E] rounded-full font-medium"
+          className="relative z-10 flex justify-center items-center h-10 px-6 border-2 border-gray rounded-full font-medium"
         >
           Saiba mais
         </a>

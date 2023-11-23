@@ -80,9 +80,9 @@ export default function Assistente() {
 
   return (
     <div className="flex flex-col h-[calc(100vh-120px)] rounded-lg shadow-main">
-      <div className="flex justify-between items-center gap-4 h-14 px-4 border-b border-[#E5EAEF] sm:px-6">
+      <div className="flex justify-between items-center gap-4 h-14 px-4 border-b border-blue-extra-light sm:px-6">
         <div className="flex items-center gap-2">
-          <div className="relative h-11 w-11 rounded-full bg-[#E5EAEF]">
+          <div className="relative h-11 w-11 rounded-full bg-blue-extra-light">
             <Image src={"/img/plataforma/bot.png"} alt="" height={44} width={44} />
 
             <div className="absolute bottom-1 right-1 h-2 w-2 bg-green-500 rounded-full animate-ping" />
@@ -94,7 +94,7 @@ export default function Assistente() {
 
         <button
           onClick={handleClearConversations}
-          className="flex justify-center items-center gap-2 h-9 px-4 bg-[#123359] rounded-lg text-sm text-white font-medium"
+          className="flex justify-center items-center gap-2 h-9 px-4 bg-primary rounded-lg text-sm text-white font-medium"
         >
           <Plus size={20} className="max-xs:hidden" />
           Nova conversa

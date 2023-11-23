@@ -82,7 +82,7 @@ export function FormRegisterUser() {
         );
       })}
 
-      <button type="submit" className="h-12 bg-[#123359] rounded-lg text-white font-medium mt-1">
+      <button type="submit" className="h-12 bg-primary rounded-lg text-white font-medium mt-1">
         Cadastrar
       </button>
     </form>

@@ -1,9 +1,9 @@
 "use client";
 
 import { ChangeEvent, ReactNode, useState } from "react";
+import clsx from "clsx";
 
 import { DialogWithAction } from "../radix/dialog";
-import clsx from "clsx";
 
 interface CreateQuestionProps {
   triggerStyle: string;
@@ -44,7 +44,7 @@ export function CreateQuestion({ triggerStyle, children }: CreateQuestionProps) 
         title="Criar nova pergunta"
         triggerText="Postar pergunta"
       >
-        <div className="flex flex-col gap-1 text-[#2E2E2E]">
+        <div className="flex flex-col gap-1 text-gray">
           <label className="font-medium">Conteúdo da pergunta</label>
 
           <textarea
@@ -54,8 +54,8 @@ export function CreateQuestion({ triggerStyle, children }: CreateQuestionProps) 
             onChange={handleInputChange}
             placeholder="Ex: Benefícios da batata"
             className={clsx(
-              "h-48 p-4 border border-[#E5EAEF] rounded-lg outline-none resize-none transition-all focus:border-[#123359]",
-              { "border-red-600": questionAlert },
+              "h-48 p-4 border rounded-lg outline-none resize-none transition-all focus:border-primary",
+              { "border-red": questionAlert },
               { "border-[#E5EAEF]": !questionAlert }
             )}
           />

@@ -34,7 +34,7 @@ export default function Plataforma() {
 
   return (
     <div className="grid grid-rows-[200px_1fr] gap-8 h-full">
-      <div className="relative flex justify-center items-center h-[200px] px-6 bg-[#ECF2FF] rounded-xl overflow-hidden sm:justify-between">
+      <div className="relative flex justify-center items-center h-[200px] px-6 bg-blue-light rounded-xl overflow-hidden sm:justify-between">
         <div className="flex flex-col justify-center items-center gap-1 sm:items-start">
           <h3 className="max-xs:text-xl">{greeting}</h3>
           <h1 className="max-xs:text-4xl max-sm:text-5xl">Bem-vindo</h1>
@@ -89,9 +89,9 @@ export default function Plataforma() {
             <Link
               href={"/plataforma/insights/criar"}
               className={clsx(
-                "flex flex-col justify-center items-center gap-1 h-full bg-[#ECF2FF] border border-[#E5EAEF] rounded-xl outline-none transition-all",
-                "text-[#2E2E2E] font-medium",
-                "hover:scale-[1.02] focus:scale-[1.02] hover:border-[#123359] focus:border-[#123359]"
+                "flex flex-col justify-center items-center gap-1 h-full bg-blue-light border border-blue-extra-light rounded-xl outline-none transition-all",
+                "text-gray font-medium",
+                "hover:scale-[1.02] focus:scale-[1.02] hover:border-primary focus:border-primary"
               )}
             >
               <PlusCircle />
@@ -100,7 +100,7 @@ export default function Plataforma() {
 
             <CreateQuestion
               triggerStyle={clsx(
-                "flex flex-col justify-center items-center gap-1 h-full bg-[#123359] rounded-xl shadow-main transition-all",
+                "flex flex-col justify-center items-center gap-1 h-full bg-primary rounded-xl shadow-main transition-all",
                 "text-white font-medium",
                 "hover:scale-[1.02] focus:scale-[1.02]"
               )}

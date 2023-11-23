@@ -107,14 +107,14 @@ export default function Login() {
           error={login.touched.password && login.errors.password}
         />
 
-        <button type="submit" className="h-12 bg-[#123359] rounded-lg text-white font-medium mt-1">
+        <button type="submit" className="h-12 bg-primary rounded-lg text-white font-medium mt-1">
           Entrar
         </button>
       </form>
 
       <span>
         Ainda não tem uma conta?{" "}
-        <Link href={"/autenticacao/registro"} className="text-[#103157] font-semibold hover:underline">
+        <Link href={"/autenticacao/registro"} className="text-primary font-semibold hover:underline">
           Registre-se
         </Link>
       </span>

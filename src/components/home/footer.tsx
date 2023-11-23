@@ -27,7 +27,7 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="flex justify-center items-center h-[70px] border-t border-[#E5EAEF]">
+      <div className="flex justify-center items-center h-[70px] border-t border-blue-extra-light">
         <span className="text-sm font-medium">© HeathNexus 2023 | Todos os direitos reservados.</span>
       </div>
     </footer>

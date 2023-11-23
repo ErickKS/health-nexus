@@ -36,7 +36,7 @@ export function Tabs({ type, onChange }: TabsProps) {
 
       <div
         className={clsx(
-          "absolute top-1 w-[calc(100%-8px)] h-10 xs:w-36 xs:h-8 bg-[#103157] rounded-lg xs:rounded-full transition-all",
+          "absolute top-1 w-[calc(100%-8px)] h-10 xs:w-36 xs:h-8 bg-primary rounded-lg xs:rounded-full transition-all",
           { "max-xs:translate-y-0 xs:translate-x-0": type === "user" },
           { "max-xs:translate-y-11 xs:translate-x-[148px]": type === "specialist" }
         )}

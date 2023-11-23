@@ -59,13 +59,13 @@ export function Comments() {
           onChange={handleTextareaChange}
           className={clsx(
             "h-32 p-4 border rounded-lg resize-none outline-none transition-all",
-            "focus:border-[#123359]",
-            { "border-red-600": commentAlert },
-            { "border-[#E5EAEF]": !commentAlert }
+            "focus:border-primary",
+            { "border-red": commentAlert },
+            { "border-blue-extra-light": !commentAlert }
           )}
         />
 
-        <button onClick={postComment} className="h-10 w-fit px-4 bg-[#123359] rounded-lg text-white font-medium">
+        <button onClick={postComment} className="h-10 w-fit px-4 bg-primary rounded-lg text-white font-medium">
           Postar comentário
         </button>
       </div>

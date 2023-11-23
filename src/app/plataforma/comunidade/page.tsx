@@ -7,7 +7,7 @@ import { CardQuestion } from "@/components/plataforma/card-question";
 export default function Comunidade() {
   return (
     <>
-      <div className="relative flex justify-center items-center h-[200px] px-6 bg-[#ECF2FF] rounded-xl overflow-hidden sm:justify-between">
+      <div className="relative flex justify-center items-center h-[200px] px-6 bg-blue-light rounded-xl overflow-hidden sm:justify-between">
         <div className="flex flex-col justify-center items-center gap-2 text-center sm:items-start">
           <h2 className="max-xs:text-3xl">Juntos pela saúde</h2>
           <h3 className="font-normal">Tire suas dúvidas ou ofereça apoio</h3>
@@ -23,12 +23,12 @@ export default function Comunidade() {
         <div className="flex items-center gap-4 h-14 px-6 rounded-xl shadow-main">
           <input type="text" id="message" name="message" className="w-full outline-none" placeholder="Pesquisar" autoComplete="off" />
 
-          <button className="flex justify-center items-center h-8 w-8 rounded-lg border border-transparent transition-all hover:border-[#E5EAEF]">
+          <button className="flex justify-center items-center h-8 w-8 rounded-lg border border-transparent transition-all hover:border-blue-extra-light">
             <Search size={20} strokeWidth={1.5} />
           </button>
         </div>
 
-        <CreateQuestion triggerStyle="h-14 bg-[#123359] rounded-xl text-white font-medium">Fazer uma pegunta</CreateQuestion>
+        <CreateQuestion triggerStyle="h-14 bg-primary rounded-xl text-white font-medium">Fazer uma pegunta</CreateQuestion>
       </div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 h-fit">
@@ -38,7 +38,7 @@ export default function Comunidade() {
 
         <CardQuestion date="15 de novembro" question="A meditação traz algum beneficio para nossa saúde?" comments={3} />
 
-        <CardQuestion date="14 de novembro" question="Como posso aliviar as dores das queimaduras da insolação ?" comments={2} />
+        <CardQuestion date="14 de novembro" question="Como posso aliviar as dores das queimaduras da insolação?" comments={2} />
 
         <CardQuestion date="14 de novembro" question="Tem algum problem em dar leite de vaca para meu bebê tomar?" comments={2} />
       </div>

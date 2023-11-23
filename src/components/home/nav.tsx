@@ -10,13 +10,13 @@ export function Nav() {
       </div>
 
       <div className="flex gap-5">
-        <Link href={"/autenticacao/login"} className="flex justify-center items-center h-9 rounded-full text-[#2E2E2E] font-semibold">
+        <Link href={"/autenticacao/login"} className="flex justify-center items-center h-9 rounded-full text-gray font-semibold">
           Entrar
         </Link>
 
         <Link
           href={"/autenticacao/registro"}
-          className="flex justify-center items-center h-9 px-6 bg-[#123359] rounded-full text-white font-medium"
+          className="flex justify-center items-center h-9 px-6 bg-primary rounded-full text-white font-medium"
         >
           Registrar
         </Link>

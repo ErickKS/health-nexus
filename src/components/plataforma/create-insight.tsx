@@ -122,7 +122,7 @@ export function CreateInsight() {
 
   return (
     <form onSubmit={createInsight} className="flex flex-col gap-4">
-      <div className="flex flex-col gap-1 text-[#2E2E2E]">
+      <div className="flex flex-col gap-1 text-gray">
         <label htmlFor="title" className="font-medium">
           Título do insight
         </label>
@@ -134,14 +134,14 @@ export function CreateInsight() {
           onChange={handleFormChange}
           placeholder="Ex: Benefícios da batata"
           className={clsx(
-            "h-11 px-4 border border-[#E5EAEF] rounded-lg outline-none transition-all focus:border-[#123359]",
-            { "border-red-600": insightDataAlert.title },
-            { "border-[#E5EAEF]": !insightDataAlert.title }
+            "h-11 px-4 border border-blue-extra-light rounded-lg outline-none transition-all focus:border-primary",
+            { "border-red": insightDataAlert.title },
+            { "border-blue-extra-light": !insightDataAlert.title }
           )}
         />
       </div>
 
-      <div className="flex flex-col gap-1 text-[#2E2E2E]">
+      <div className="flex flex-col gap-1 text-gray">
         <label htmlFor="title" className="font-medium">
           Conteúdo do insight
         </label>
@@ -152,25 +152,25 @@ export function CreateInsight() {
           onChange={handleFormChange}
           placeholder="Ex: Benefícios da batata"
           className={clsx(
-            "h-48 p-4 border border-[#E5EAEF] rounded-lg outline-none resize-none transition-all focus:border-[#123359]",
-            { "border-red-600": insightDataAlert.content },
-            { "border-[#E5EAEF]": !insightDataAlert.content }
+            "h-48 p-4 border border-blue-extra-light rounded-lg outline-none resize-none transition-all focus:border-primary",
+            { "border-red": insightDataAlert.content },
+            { "border-blue-extra-light": !insightDataAlert.content }
           )}
         />
       </div>
 
-      <div className="relative flex flex-col gap-1 text-[#2E2E2E]">
+      <div className="relative flex flex-col gap-1 text-gray">
         <span className="font-medium">Imagem de destaque</span>
 
         <label
           htmlFor="image"
           tabIndex={0}
           className={clsx(
-            "relative flex flex-col justify-center items-center gap-1 h-40 p-4 border border-[#E5EAEF] rounded-lg outline-none cursor-pointer transition-all",
-            "text-[#2E2E2E]",
-            "hover:border-[#123359] focus:border-[#123359]",
-            { "border-red-600": insightDataAlert.image },
-            { "border-[#E5EAEF]": !insightDataAlert.image }
+            "relative flex flex-col justify-center items-center gap-1 h-40 p-4 border border-blue-extra-light rounded-lg outline-none cursor-pointer transition-all",
+            "text-gray",
+            "hover:border-primary focus:border-primary",
+            { "border-red": insightDataAlert.image },
+            { "border-blue-extra-light": !insightDataAlert.image }
           )}
         >
           {insightData.imagePreviewURL ? (
@@ -204,7 +204,7 @@ export function CreateInsight() {
         )}
       </div>
 
-      <button type="submit" className="h-10 w-fit mt-4 px-4 bg-[#123359] rounded-lg text-white font-medium">
+      <button type="submit" className="h-10 w-fit mt-4 px-4 bg-primary rounded-lg text-white font-medium">
         Postar comentário
       </button>
     </form>

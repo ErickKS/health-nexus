@@ -98,7 +98,7 @@ export function Members() {
 
       <DialogWithoutAction open={openDialog} setOpen={setOpenDialog} title="Integrantes">
         <div className="flex flex-col gap-2 max-w-[320px] px-4">
-          <div ref={sliderRef} className="keen-slider bg-[#ECF2FF] rounded-md">
+          <div ref={sliderRef} className="keen-slider bg-blue-light rounded-md">
             {members.map(({ name, rm, role }) => (
               <div key={rm} className="keen-slider__slide flex flex-col items-center justify-center text-center gap-2 p-4">
                 <h4>{name}</h4>

@@ -29,10 +29,10 @@ export function Input({ type: Type, id, value, iconStart, error, ...props }: Inp
         htmlFor={id}
         className={clsx(
           "flex items-center gap-4 h-12 w-full px-4 border rounded-lg select-none shadow-main transition-all",
-          "text-[#2E2E2E]",
-          "focus-within:border-[#123359]",
-          { "border-red-600": error },
-          { "border-[#E5EAEF]": !error }
+          "text-gray",
+          "focus-within:border-primary",
+          { "border-red": error },
+          { "border-blue-extra-light": !error }
         )}
       >
         {iconStart}
@@ -42,7 +42,7 @@ export function Input({ type: Type, id, value, iconStart, error, ...props }: Inp
           id={id}
           name={id}
           onBlur={valueVerification}
-          className="bg-transparent outline-none h-full w-full font-medium placeholder:text-[#2E2E2E]"
+          className="bg-transparent outline-none h-full w-full font-medium placeholder:text-gray"
           {...props}
         />
 
@@ -61,7 +61,7 @@ export function Input({ type: Type, id, value, iconStart, error, ...props }: Inp
           ))}
       </label>
 
-      {error && <span className="text-sm text-red-600 font-semibold">{error}</span>}
+      {error && <span className="text-sm text-red font-semibold">{error}</span>}
     </div>
   );
 }

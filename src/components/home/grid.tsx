@@ -78,7 +78,7 @@ export function Grid() {
         <Svg2 />
       </div>
 
-      <div className="hidden flex-col justify-between h-[252px] pt-[50px] pb-3 px-3 bg-[#ECF2FF] rounded-3xl font-medium shadow-md sm:flex">
+      <div className="hidden flex-col justify-between h-[252px] pt-[50px] pb-3 px-3 bg-blue-light rounded-3xl font-medium shadow-md sm:flex">
         <span className="text-xl">Entre em nossa plataforma</span>
 
         <Link href={"/autenticacao/login"} className="flex justify-center items-center h-10 px-6 bg-white rounded-full shadow-main">

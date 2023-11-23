@@ -6,7 +6,7 @@ export default function Insight() {
 
   return (
     <div className="flex flex-col">
-      <div className="relative flex justify-between items-center h-[200px] px-6 bg-[#ECF2FF] rounded-xl">
+      <div className="relative flex justify-between items-center h-[200px] px-6 bg-blue-light rounded-xl">
         <Image
           src={"/img/plataforma/insight-1.jpg"}
           alt="imagens de destaque do post"
@@ -17,7 +17,7 @@ export default function Insight() {
       </div>
 
       <div className="flex flex-col rounded-b-xl shadow-main">
-        <div className="text-[#2E2E2E] pt-8 p-6 border-b border-[#E5EAEF]">
+        <div className="text-gray pt-8 p-6 border-b border-blue-extra-light">
           <span>Dra. Elizabeth</span>
           <h2 className="mt-1 mb-4">Saiba como viver até os 96 anos</h2>
         </div>

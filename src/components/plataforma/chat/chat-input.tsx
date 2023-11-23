@@ -35,7 +35,7 @@ export function ChatInput({ onSendMessage, disabled }: ChatInputProps) {
   }
 
   return (
-    <div className="flex gap-6 py-2 px-6 border-t border-[#E5EAEF]">
+    <div className="flex gap-6 py-2 px-6 border-t border-blue-extra-light">
       <textarea
         id="message"
         name="message"
@@ -52,9 +52,9 @@ export function ChatInput({ onSendMessage, disabled }: ChatInputProps) {
       <button
         onClick={handleSendMessage}
         className={clsx(
-          "flex justify-center items-center h-8 w-8 mt-auto rounded-lg border border-[#E5EAEF] text-[#E5EAEF] transition-all",
+          "flex justify-center items-center h-8 w-8 mt-auto rounded-lg border border-blue-extra-light text-blue-extra-light transition-all",
           { "cursor-not-allowed": !text.length },
-          { "bg-[#123359]": text.length }
+          { "bg-primary": text.length }
         )}
       >
         <SendHorizontal size={20} strokeWidth={1.5} />

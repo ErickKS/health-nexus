@@ -28,12 +28,12 @@ export function ChatArea({ chat, loading }: ChatAreaProps) {
       {chat && chat.messages.map((message) => <ChatMessage key={message.id} item={message} />)}
 
       {loading && (
-        <div className="relative flex items-center px-4 h-[72px] py-7 bg-[#E5EAEF] rounded-lg">
-          <div className="absolute -top-[11px] flex justify-center items-center px-3 h-5 bg-white border border-[#E5EAEF] rounded-full text-xs text-black font-medium">
+        <div className="relative flex items-center px-4 h-[72px] py-7 bg-blue-extra-light rounded-lg">
+          <div className="absolute -top-[11px] flex justify-center items-center px-3 h-5 bg-white border border-bbg-blue-extra-light rounded-full text-xs text-black font-semibold">
             Assistente
           </div>
 
-          <div className="w-1 h-4 bg-[#123359] animate-blink" />
+          <div className="w-1 h-4 bg-primary animate-blink" />
         </div>
       )}
     </div>
