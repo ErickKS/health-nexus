@@ -69,7 +69,7 @@ export function FormRegisterUser() {
     };
 
     try {
-      await axios.post("http://localhost:3000/api/sign-up", registerData);
+      // await axios.post("http://localhost:3000/api/sign-up", registerData);
 
       localStorage.setItem("name", name);
       localStorage.setItem("account", "U");
