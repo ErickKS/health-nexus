@@ -1,21 +1,13 @@
-import Image from "next/image";
-
+import { Banner } from "@/components/plataforma/banner";
 import { CardInsight } from "@/components/plataforma/card-insight";
 
 export default function Insights() {
   return (
     <>
-      <div className="relative flex justify-center items-center h-[200px] px-6 bg-blue-light rounded-xl overflow-hidden sm:justify-between">
-        <div className="flex flex-col justify-center items-center gap-2 text-center sm:items-start">
-          <h2 className="max-xs:text-3xl">Indicações de especialistas</h2>
-          <h3 className="font-normal">Veja os últimos destaques</h3>
-        </div>
-
-        <Image src={"/img/plataforma/3d-insights.png"} alt="" height={146} width={146} priority className="max-sm:hidden" />
-
-        <Image src={"/img/plataforma/circle-1.svg"} alt="" height={228} width={228} className="absolute -left-24" />
-        <Image src={"/img/plataforma/circle-2.svg"} alt="" height={130} width={130} className="absolute right-0 -top-8" />
-      </div>
+      <Banner image="3d-insights" height={146} width={146}>
+        <h2 className="max-xs:text-3xl">Indicações de especialistas</h2>
+        <h3 className="font-normal">Veja os últimos destaques</h3>
+      </Banner>
 
       <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 md:gap-8 md:[&>*:nth-child(10n+1)]:col-span-2 md:[&>*:nth-child(10n+7)]:col-span-2">
         <CardInsight id="1" title="Saiba como viver até os 96 anos" author="Dra. Elizabeth" image="/img/plataforma/insight-1.jpg" />

@@ -33,7 +33,7 @@ export default function Assistente() {
         chatListClone[chatIndex].messages.push({
           id: v4(),
           author: "ai",
-          body: "Aqui vai a resposta do assistente!",
+          body: "Aqui vai a resposta do assistente",
         });
       }
 
