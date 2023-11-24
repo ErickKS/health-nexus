@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { FormEvent, useState } from "react";
+import { FormEvent, useState, useEffect } from "react";
 import axios from "axios";
 import { Mail, LockKeyhole } from "lucide-react";
 
@@ -16,6 +16,10 @@ import { Toast } from "@/components/radix/toast";
 export default function Login() {
   const router = useRouter();
   const [toastActive, setToastActive] = useState(false);
+
+  useEffect(() => {
+    if (localStorage.getItem("name") && localStorage.getItem("account")) router.push("/plataforma");
+  }, []);
 
   const login = useValidate<Login>({
     initialValues: emptyLogin,
@@ -65,8 +69,8 @@ export default function Login() {
 
       console.log(console.log(user));
 
-      sessionStorage.setItem("name", user[0].nome);
-      sessionStorage.setItem("type", user[0].tipoConta);
+      localStorage.setItem("name", user[0].nome);
+      localStorage.setItem("account", user[0].tipoConta);
 
       router.push("/plataforma");
     } catch (error) {

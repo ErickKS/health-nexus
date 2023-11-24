@@ -93,10 +93,10 @@ export function FormRegisterSpecialist() {
     };
 
     try {
-      const data = await axios.post("http://localhost:3000/api/sign-up", registerData);
+      await axios.post("http://localhost:3000/api/sign-up", registerData);
 
-      sessionStorage.setItem("name", name);
-      sessionStorage.setItem("type", "U");
+      localStorage.setItem("name", name);
+      localStorage.setItem("account", "E");
 
       router.push("/plataforma");
     } catch (error) {

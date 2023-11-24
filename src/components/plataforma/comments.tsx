@@ -29,7 +29,7 @@ export function Comments() {
       return;
     }
 
-    const name = sessionStorage.getItem("name");
+    const name = localStorage.getItem("name");
 
     if (!name) return;
 
