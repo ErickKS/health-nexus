@@ -53,30 +53,24 @@ export default function Login() {
 
     const { email, password } = login.values;
 
-    // try {
-    // const response = await axios.get("http://localhost:8080/ProjetoHealthNexus/rest/login/");
-    // const response = await axios.post(
-    //   "http://localhost:8080/ProjetoHealthNexus/rest/login/",
-    //   `email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`,
-    //   {
-    //     headers: {
-    //       "Content-Type": "application/x-www-form-urlencoded",
-    //     },
-    //   }
-    // );
-    // console.log(response.data);
-    // } catch (error) {
-    //   console.error("Erro ao fazer login");
-    // }
+    try {
+      const data = await axios.post("http://localhost:3000/api/sign-in", { email, password });
 
-    if (email !== "erick@email.com" || password !== "12345678") {
-      handleToast();
-    } else {
-      const name = "Erick Kuwahara";
+      const user = data.data.data; // I know, I know
 
-      sessionStorage.setItem("name", name);
+      if (user.length === 0) {
+        handleToast();
+        return;
+      }
+
+      console.log(console.log(user));
+
+      sessionStorage.setItem("name", user[0].nome);
+      sessionStorage.setItem("type", user[0].tipoConta);
 
       router.push("/plataforma");
+    } catch (error) {
+      console.error("Erro ao fazer login");
     }
   }
 

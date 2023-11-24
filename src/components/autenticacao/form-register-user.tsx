@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { FormEvent } from "react";
+import axios from "axios";
 
 import { useValidate } from "@/hooks/useValidate";
 import { RegisterUser } from "@/types/auth";
@@ -50,7 +51,7 @@ export function FormRegisterUser() {
 
   const isValidUser = Object.values(registerUser.errors).every((error) => !error);
 
-  function signUp(event: FormEvent<HTMLFormElement>) {
+  async function signUp(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     if (!isValidUser) {
@@ -58,7 +59,25 @@ export function FormRegisterUser() {
       return;
     }
 
-    router.push("/plataforma");
+    const { name, email, password } = registerUser.values;
+
+    const registerData = {
+      name,
+      email,
+      password,
+      tipo: "U",
+    };
+
+    try {
+      const data = await axios.post("http://localhost:3000/api/sign-up", registerData);
+
+      sessionStorage.setItem("name", name);
+      sessionStorage.setItem("type", "U");
+
+      router.push("/plataforma");
+    } catch (error) {
+      console.error("Erro ao fazer o cadastro");
+    }
   }
 
   return (

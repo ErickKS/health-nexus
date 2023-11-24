@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { FormEvent } from "react";
+import axios from "axios";
 
 import { useValidate } from "@/hooks/useValidate";
 import { RegisterSpecialist } from "@/types/auth";
@@ -71,7 +72,7 @@ export function FormRegisterSpecialist() {
 
   const isValidSpecialist = Object.values(registerSpecialist.errors).every((error) => !error);
 
-  function signUp(event: FormEvent<HTMLFormElement>) {
+  async function signUp(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     if (!isValidSpecialist) {
@@ -79,7 +80,28 @@ export function FormRegisterSpecialist() {
       return;
     }
 
-    router.push("/plataforma");
+    const { name, email, cpf, crm, profession, password } = registerSpecialist.values;
+
+    const registerData = {
+      name,
+      email,
+      cpf,
+      crm,
+      profession,
+      password,
+      tipo: "E",
+    };
+
+    try {
+      const data = await axios.post("http://localhost:3000/api/sign-up", registerData);
+
+      sessionStorage.setItem("name", name);
+      sessionStorage.setItem("type", "U");
+
+      router.push("/plataforma");
+    } catch (error) {
+      console.error("Erro ao fazer o cadastro");
+    }
   }
 
   return (
