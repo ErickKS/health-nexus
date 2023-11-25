@@ -8,12 +8,19 @@
     <a href="#-funcionalidades">Funcionalidades</a>
 </p>
 
+<br/>
+
+<div align="center">
+    <img src="./public/readme.gif" alt="project gif" height="400px"/>
+</div>
+
 <br/><hr/>
 
 ## 📚 Projeto
 
-<p>O HealthNexus é um projeto centrado em um site que reúne informações abrangentes sobre doenças, incluindo causas, tratamentos e métodos de transmissão. Qualquer pessoa, seja usuário comum ou médico especialista, pode se cadastrar na plataforma. Médicos desempenham um papel crucial, oferecendo ajuda a usuários com questões de saúde, como dicas e tratamento psicológico, além de compartilhar insights na forma de postagens.</p>
-<p>O objetivo do HealthNexus é criar uma comunidade interativa e informativa, incentivando a troca de informações entre usuários e profissionais de saúde.</p>
+<p>Bem-vindo ao Health Nexus, uma inovadora plataforma de saúde que reúne o conhecimento especializado de médicos, a força da comunidade e a agilidade da inteligência artificial.</p>
+<p>Você terá acesso a informações confiáveis e atualizadas, oferecidas por especialistas de destaque. Além disso, pessoas de todos os lugares podem compartilhar suas experiências, fazer perguntas e fornecer apoio mútuo, contando com um Assistente Virtual de Inteligência Artificial pronto para responder a qualquer uma de suas dúvida.</p>
+<p>Nosso objetivo é criar um ambiente seguro, informativo e colaborativo que coloca sua saúde em primeiro lugar.</p>
 
 <br/>
 
@@ -28,7 +35,6 @@
 
 ## 🧾 Funcionalidades
 
-- [x] Coletar e validar os dados de login do usuário.
-- [x] Coletar e validar os dados de cadastro do usuário/especialista.
+- [x] Sistema de login/cadastro totalmente funcional.
 - [x] Lidar com o tipo de usuário na plataforma (usuário/especialista).
-- [x] Assistente virtual IA
+- [x] Assistente Virtual IA
