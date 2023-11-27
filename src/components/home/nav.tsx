@@ -1,5 +1,6 @@
-import Link from "next/link";
 import Image from "next/image";
+
+import { Button } from "./button";
 
 export function Nav() {
   return (
@@ -9,17 +10,14 @@ export function Nav() {
         <Image src={"/img/logo/nexus-3.svg"} alt="logo" height={40} width={40} priority className="xs:hidden" />
       </div>
 
-      <div className="flex gap-5">
-        <Link href={"/autenticacao/login"} className="flex justify-center items-center h-9 rounded-full text-gray font-semibold">
+      <div className="flex gap-2">
+        <Button href={"/autenticacao/login"} variant="extra" size="sm">
           Entrar
-        </Link>
+        </Button>
 
-        <Link
-          href={"/autenticacao/registro"}
-          className="flex justify-center items-center h-9 px-6 bg-primary rounded-full text-white font-medium"
-        >
+        <Button href={"/autenticacao/registro"} size="sm">
           Registrar
-        </Link>
+        </Button>
       </div>
     </nav>
   );

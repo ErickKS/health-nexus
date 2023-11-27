@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Button } from "./button";
 
 function Svg1() {
   return (
@@ -81,9 +81,9 @@ export function Grid() {
       <div className="hidden flex-col justify-between h-[252px] pt-[50px] pb-3 px-3 bg-blue-light rounded-3xl font-medium shadow-md sm:flex">
         <span className="text-xl">Entre em nossa plataforma</span>
 
-        <Link href={"/autenticacao/login"} className="flex justify-center items-center h-10 px-6 bg-white rounded-full shadow-main">
+        <Button href={"/autenticao/login"} variant="secondary" size="lg">
           Entrar
-        </Link>
+        </Button>
       </div>
 
       <div>

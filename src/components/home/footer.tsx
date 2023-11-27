@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 
 import { Members } from "./members";
+import { Button } from "./button";
 
 export function Footer() {
   return (
@@ -18,12 +18,9 @@ export function Footer() {
         <div className="flex flex-col gap-4">
           <Members />
 
-          <Link
-            href={"/autenticacao/login"}
-            className="flex justify-center items-center h-10 px-6 bg-white rounded-full font-medium shadow-main"
-          >
+          <Button href={"/autenticacao/login"} size="lg">
             Entrar na plataforma
-          </Link>
+          </Button>
         </div>
       </div>
 
