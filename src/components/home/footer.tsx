@@ -18,7 +18,7 @@ export function Footer() {
         <div className="flex flex-col gap-4">
           <Members />
 
-          <Button href={"/autenticacao/login"} size="lg">
+          <Button href={"/autenticacao/login"} variant="secondary" size="lg">
             Entrar na plataforma
           </Button>
         </div>
