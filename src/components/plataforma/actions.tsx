@@ -29,7 +29,7 @@ export function Actions() {
       )}
 
       <CreateQuestion
-        triggerStyle={clsx(
+        className={clsx(
           "flex flex-col justify-center items-center gap-1 h-full bg-primary rounded-xl shadow-main transition-all",
           "text-white font-medium",
           "hover:scale-[1.02] focus:scale-[1.02]"

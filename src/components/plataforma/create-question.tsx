@@ -1,16 +1,13 @@
 "use client";
 
-import { ChangeEvent, ReactNode, useState } from "react";
+import { ChangeEvent, ComponentProps, useState } from "react";
 import clsx from "clsx";
 
 import { DialogWithAction } from "../radix/dialog";
 
-interface CreateQuestionProps {
-  triggerStyle: string;
-  children: ReactNode;
-}
+interface CreateQuestionProps extends ComponentProps<"button"> {}
 
-export function CreateQuestion({ triggerStyle, children }: CreateQuestionProps) {
+export function CreateQuestion({ ...props }: CreateQuestionProps) {
   const [openDialog, setOpenDialog] = useState(false);
   const [question, setQuestion] = useState("");
   const [questionAlert, setQuestionAlert] = useState(false);
@@ -33,8 +30,8 @@ export function CreateQuestion({ triggerStyle, children }: CreateQuestionProps) 
 
   return (
     <>
-      <button onClick={() => setOpenDialog(!openDialog)} className={triggerStyle}>
-        {children}
+      <button onClick={() => setOpenDialog(!openDialog)} {...props}>
+        {props.children}
       </button>
 
       <DialogWithAction
